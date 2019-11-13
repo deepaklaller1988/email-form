@@ -38,7 +38,21 @@ onSubmit() {
       "Subject": "contact us",
       "Body": "test email"
     }
-  this.http.post('https://test.secureprivacy.ai/api/email', data).subscribe(data=>{
+  this.http.post('https://test.secureprivacy.ai/api/email', data).subscribe(data =>{
+    if(data){
+      alert('spmthing went wrong');
+    
+    }else{
+      alert('Mail send succesfully');
+      this.registerForm = this.formBuilder.group({
+        firstName: [''],
+        email: [''],
+        c_name: [''],
+        country: [''],
+        website: [''],
+        urls: ['']
+    });
+    }
    
   })
    
